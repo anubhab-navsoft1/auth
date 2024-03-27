@@ -82,10 +82,10 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
 
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
-)
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',  
+    'account.custom_backend.CustomEmailBackend',  
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -98,6 +98,13 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'footballproject.urls'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # SMTP server address
+EMAIL_PORT = 587  # SMTP port
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'anubhab.nandi@navsoft.in'  # Your email address
+EMAIL_HOST_PASSWORD = 'xurq jngv tepn kmgz'
 
 TEMPLATES = [
     {

@@ -9,3 +9,9 @@ class CustomUserSerializers(serializers.ModelSerializer):
         read_only_fields = ('id' , 'date_joined')
         
         
+class LoginSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = ('username', 'password', 'email')
+        
+        

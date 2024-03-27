@@ -10,3 +10,6 @@ pytz==2024.1
 sqlparse==0.4.4
 typing-extensions==4.1.1
 zipp==3.6.0
+
+
+xurq jngv tepn kmgz
